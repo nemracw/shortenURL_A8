@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const Url = require('./models/url')
+const { urlencoded } = require('express')
 
 
 
@@ -28,6 +29,13 @@ app.get('/', (req, res) => {
     .lean() // 把 Mongoose 的 Model 物件轉換成乾淨的 JavaScript 資料陣列
     .then(url => res.render('index', { url })) // 將資料傳給 index 樣板
     .catch(error => console.error(error))  // 錯誤處理
+})
+
+
+app.post('/urlShortener/success', (req, res) => {
+  return Url.find()
+    .then(() => res.render('success') )// 新增完成後導回首頁
+    .catch(error => console.log(error))
 })
 
 app.listen(3000, () => {
