@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Todo = require('../url') // 載入 urk model
+const Todo = require('../url') // 載入 url model
 mongoose.connect('mongodb://localhost/', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 db.on('error', () => {
