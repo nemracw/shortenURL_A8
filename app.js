@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const Url = require('./models/url')
+const generatePath = require('./generate_shortURL')
 
 
 mongoose.connect('mongodb://localhost/urlShortener', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -22,7 +23,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/urlShortener/success', (req, res) => {
-  res.render('success')
+  const shortUrl = generatePath
+  res.render('success', { shortUrl: shortUrl })
 })
 
 app.listen(3000, () => {

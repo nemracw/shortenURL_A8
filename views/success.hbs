@@ -1,4 +1,10 @@
-  <div class="col-7 text-center">
+{{#if shortUrl}}
+<div class="row justify-content-center">
+  <div class="col-7 text-start">
     <h2>Success! Please use this link:</h2>
-     <p></p>
+    <a href="https://www.google.com">
+      <h4>{{shortUrl}}</h4>
+    </a>
   </div>
+</div>
+{{/if}}
