@@ -24,12 +24,9 @@ function generatePath(options) {
     path += sample(collection)
   }
 
-  const host = 'www.localhost:3000/'
-  let shortenUrl = host + path
-
   // return the generated path
-  return shortenUrl
+  return path
 }
 
 // export generatePath function for other files to use
-module.exports = generatePath()
+module.exports = generatePath

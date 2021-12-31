@@ -1,10 +1,14 @@
-{{#if shortUrl}}
+
 <div class="row justify-content-center">
   <div class="col-7 text-start">
     <h2>Success! Please use this link:</h2>
-    <a href="https://www.google.com">
-      <h4>{{shortUrl}}</h4>
+    <a href="{{{originalUrl}}}">
+      <h4 id="shortUrl" name="shortUrl">{{shortUrl}}</h4>
     </a>
   </div>
+  <div class="col-7 text-center mt-3">
+  <button class="btn btn-primary" type="submit" style="width:120px;" 
+          onclick="myFunction()">Copy</button>
+  </div>
 </div>
-{{/if}}
+
