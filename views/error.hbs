@@ -1,9 +1,11 @@
 <div class="error-msg row justify-content-center">
   <div class="col-7 text-center">
     <h2>{{errorMsg}}</h2>
-    <h4>{{errorURL}}</h4>
+    <h5>{{errorURL}}</h5>
   </div>
-  <div class="col-7 text-center mt-3">
-    <a href="/">Return to homepage</a>
+  <div class="col-7 text-center mt-1">
+    <a href="/">
+      <button class="btn btn-outline-danger mt-3" type="button" style="width:120px;" onclick="copy()">Back</button>
+    </a>
   </div>
 </div>

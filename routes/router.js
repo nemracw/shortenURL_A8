@@ -32,7 +32,7 @@ router.get('/:shortUrl', (req, res) => {
     .then(data => {
       if (!data) {
         return res.render("error", {
-          errorMsg: "Can't found the URL",
+          errorMsg: "Cannot found the URL",
           errorURL: shortUrl,
         })
       }
