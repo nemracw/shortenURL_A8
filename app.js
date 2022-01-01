@@ -56,9 +56,22 @@ app.post('/shortened', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.get('/:shortUrl', (req, res) => {
+  const shortUrl = host + req.params.shortUrl 
 
+  Url.findOne({ shortUrl })
+    .then(data => {
+      if (!data) {
+        return res.render("error", {
+          errorMsg: "Can't found the URL",
+          errorURL: shortUrl,
+        })
+      }
+      res.redirect(data.originalUrl)
+    })
+    .catch(error => console.error(error))
+})
 
-app.get("")
 
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
