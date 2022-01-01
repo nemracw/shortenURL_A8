@@ -20,7 +20,7 @@ function generatePath(codeLength) {
 
   // start generating path
   let path = ''
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < codeLength; i++) {
     path += sample(collection)
   }
 
