@@ -5,7 +5,7 @@ function sample(array) {
 }
 
 // define generatePath function
-function generatePath(options) {
+function generatePath(codeLength) {
   
   // define the letter/number might use
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
