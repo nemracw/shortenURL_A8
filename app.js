@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const methodOverride = require('method-override') 
 
 const app = express()
 const port = 3000
@@ -27,18 +28,11 @@ db.once('open', () => {
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
+app.use(methodOverride('_method'))
+
 app.get('/', (req, res) => {
   res.render('index')
 })
-
-// app.post('/', (req, res) => {
-//   const originalUrl = req.body.inputURL
-//   const path = generatePath(5)
-//   let shortUrl = host + path
-//   return Url.create({ shortUrl , originalUrl })
-//     .then(() => res.render('success', { shortUrl, originalUrl }) )
-//     .catch(error => console.log(error))
-// })
 
 app.post('/shortened', (req, res) => {
   const targetURL = req.body.inputURL
